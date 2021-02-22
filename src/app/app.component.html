@@ -1,1 +1,26 @@
-<h2>app works</h2>
+<h2 #myTitle></h2>
+<div>
+  <div>
+    You cart: <span #numberItems></span> purchases
+    <div>
+      <button (click)="onShowCart()">{{ labelButtonCart }} cart</button>
+    </div>
+  </div>
+</div>
+<div [ngClass]="'container'">
+  <div [ngStyle]="{ backgroundColor: '#dee3e8' }">
+    <app-book
+      [ListOfBooks]="listOfBooks"
+      (buyBook)="onBuyBook($event)"
+    ></app-book>
+  </div>
+  <div [ngStyle]="{ paddingLeft: '30px', backgroundColor: '#dee3e8' }">
+    <app-cart
+      [cart]="order"
+      [showCart]="showCart"
+      [totalPrice]="totalPrice"
+      (changedAmountOrderBook)="onChangedAmountOrderBook($event)"
+      (deleteBookFromOrder)="onDeleteBookFromOrder($event)"
+    ></app-cart>
+  </div>
+</div>

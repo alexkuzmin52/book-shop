@@ -1,0 +1,15 @@
+<div *ngFor="let book of ListOfBooks">
+  <hr />
+  <div>name: {{ book.name }}</div>
+  <div>description: {{ book.description }}</div>
+  <div>price: {{ book.price }}</div>
+  <div>category: {{ book.category }}</div>
+  <div>createDate: {{ book.createDate }}</div>
+  <div>stock: {{ book.stock }}</div>
+  <div>orderCount: {{ book.orderCount }}</div>
+  <div>isAvailable: {{ book.isAvailable }}</div>
+  <div>
+    <button (click)="onBuy(book)" [disabled]="!book.isAvailable">Buy</button>
+  </div>
+  <hr />
+</div>

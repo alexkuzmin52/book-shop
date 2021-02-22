@@ -1,0 +1,18 @@
+<div [ngStyle]="{ display: 'flex', marginLeft: '30px' }">
+  <div *ngIf="showCart">
+    <div>total: {{ totalPrice }}</div>
+    <div *ngFor="let book of cart">
+      <div>
+        name: {{ book.name }} count: {{ book.orderCount }}
+        <button (click)="onEditItem(book)">Edit</button>
+      </div>
+    </div>
+  </div>
+  <div [ngStyle]="{ marginLeft: '30px' }">
+    <app-cart-item
+      [selectedItem]="selectedBookFromCart"
+      (changeAmountOfOrder)="onChangeAmountOfOrder($event)"
+      (deleteItemFromOrder)="onDeleteItemFromOrder($event)"
+    ></app-cart-item>
+  </div>
+</div>

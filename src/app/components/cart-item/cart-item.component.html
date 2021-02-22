@@ -1,0 +1,20 @@
+<div *ngIf="selectedItem">
+  <hr />
+  <div>name: {{ selectedItem.name }}</div>
+  <div>description: {{ selectedItem.description }}</div>
+  <div>price: {{ selectedItem.price }}</div>
+  <div>category: {{ selectedItem.category }}</div>
+  <div>createDate: {{ selectedItem.createDate }}</div>
+  <div>stock: {{ selectedItem.stock }}</div>
+  <div>orderCount: {{ selectedItem.orderCount }}</div>
+  <input
+    type="number"
+    min="0"
+    max="{{ selectedItem.stock }}"
+    (change)="onChangeAmountOfSelectedItem($event)"
+    [value]="selectedItem.orderCount"
+  />
+  <div>isAvailable: {{ selectedItem.isAvailable }}</div>
+  <button (click)="onDeleteItem(selectedItem)">Delete</button>
+  <hr />
+</div>
