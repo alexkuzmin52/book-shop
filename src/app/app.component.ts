@@ -23,7 +23,9 @@ export class AppComponent implements AfterViewInit {
     this.listOfBooks = appService.createBooksList();
   }
   ngAfterViewInit(): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.myTitle.nativeElement.textContent = 'This is Task#1';
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.numberItems.nativeElement.textContent = 0;
   }
 

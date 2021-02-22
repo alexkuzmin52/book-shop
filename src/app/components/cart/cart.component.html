@@ -1,4 +1,4 @@
-<div [ngStyle]="{ display: 'flex', marginLeft: '30px' }">
+<div *ngIf="showCart" [ngStyle]="{ display: 'flex', marginLeft: '30px' }">
   <div *ngIf="showCart">
     <div>total: {{ totalPrice }}</div>
     <div *ngFor="let book of cart">

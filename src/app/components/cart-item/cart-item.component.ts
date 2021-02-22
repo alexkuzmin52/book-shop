@@ -13,9 +13,11 @@ export class CartItemComponent {
   @Output() deleteItemFromOrder = new EventEmitter<IBook>();
 
   onChangeAmountOfSelectedItem(event: any): void {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (event.target.valueAsNumber > this.selectedItem.stock) {
       return;
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.changeAmountOfOrder.emit(event.target.valueAsNumber);
   }
 

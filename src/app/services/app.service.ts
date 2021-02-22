@@ -83,6 +83,7 @@ export class AppService {
     if (index === -1) {
       book.orderCount += 1;
       books.push(book);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       numberItems.nativeElement.textContent++;
     } else {
       books[index].orderCount += 1;
@@ -100,10 +101,15 @@ export class AppService {
     }
   }
 
-  deleteBookFromOrder(book: IBook, order: IBook[], numberItems: ElementRef) {
+  deleteBookFromOrder(
+    book: IBook,
+    order: IBook[],
+    numberItems: ElementRef
+  ): void {
     const index = order.findIndex((value) => value.id === book.id);
     if (index !== -1) {
       order.splice(index, 1);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       numberItems.nativeElement.textContent--;
     }
   }
